@@ -35,4 +35,4 @@ Playing solo (running the game and server on the same computer) works out of the
 
 The `build-server.sh` script has only been tested on Arch Linux and is not guaranteed to work on other Linux distributions. However, the AzerothCore builds it creates should work on most other Linux distributions.
 
-These packages are required (on Arch Linux) for the `build-server.sh` to work properly: `base-devel gcc boost cmake git libaio numactl 7zip`
+These packages are required (on Arch Linux) for the `build-server.sh` to work properly: `base-devel gcc boost cmake git libaio numactl 7zip wget`
