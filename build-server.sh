@@ -20,7 +20,7 @@ export COMPILATION_THREADS="$(nproc)"
 
 export scriptdir="$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")"
 
-mysql_server="https://dev.mysql.com/get/Downloads/MySQL-9.7/mysql-9.7.2-linux-glibc2.28-x86_64.tar.xz"
+mysql_server="https://dev.mysql.com/get/Downloads/MySQL-9.7/mysql-9.7.2-linux-glibc2.28-x86_64-minimal.tar.xz"
 game_data="https://github.com/Kron4ek/AzerothCore-portable-builds/releases/download/data/data.7z"
 azerothcore_repo="https://github.com/Grimfeather/azerothcore-wotlk.git"
 
