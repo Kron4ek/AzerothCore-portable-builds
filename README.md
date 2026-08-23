@@ -16,6 +16,15 @@ It also includes a script (`build-server.sh`) for creating such portable builds 
 
 To stop the server, execute the `server exit` command on it.
 
+<details>
+<summary>Сlick here to show the video
+</summary>
+<br>
+
+https://github.com/user-attachments/assets/ccf2aa02-8af0-4a17-9eb3-e9a6b823e7c0
+
+</details>
+
 ## Requirements
 
 1. The game client of version 3.3.5a is required to play on the server. On Linux you can run it via Wine, it works out of the box.
@@ -30,6 +39,15 @@ You can customize the server to your liking by editing the configuration files i
 ## Multiplayer
 
 Playing solo (running the game and server on the same computer) works out of the box. If you want other computers on your local network to be able to join your server, you need to connect to the database via tools like `DBeaver` or `HeidiSQL` (port is 3308, login is root, password is empty) and change `127.0.0.1` in `acore_auth.realmlist.address` table to the local IP-address of the computer on which the server is running. Also change realmlist to the same IP-address in all your game clients. Restart the server after editing the database.
+
+<details>
+<summary>Сlick here to show the video
+</summary>
+<br>
+
+https://github.com/user-attachments/assets/6a4997c0-629a-431e-85c0-618aed8b94d3
+
+</details>
 
 ## Building
 
