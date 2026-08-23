@@ -45,7 +45,7 @@ Playing solo (running the game and server on the same computer) works out of the
 </summary>
 <br>
 
-https://github.com/user-attachments/assets/6a4997c0-629a-431e-85c0-618aed8b94d3
+https://github.com/user-attachments/assets/46b43e70-bbe0-4ded-be73-1915ff493b5b
 
 </details>
 
