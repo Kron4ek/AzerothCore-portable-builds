@@ -29,7 +29,7 @@ You can customize the server to your liking by editing the configuration files i
 
 ## Multiplayer
 
-Playing solo works out of the box. If you want other players on your local network to be able to join your server, you need to connect to the database via tools like `DBeaver` or `HeidiSQL` (port is 3308, login is root, password is empty) and change `127.0.0.1` in `acore_auth.realmlist.address` table to the local IP-address of the computer on which the server is running. Also change realmlist to the same IP-address in all your game clients. Restart the server after editing the database.
+Playing solo (running the game and server on the same computer) works out of the box. If you want other computers on your local network to be able to join your server, you need to connect to the database via tools like `DBeaver` or `HeidiSQL` (port is 3308, login is root, password is empty) and change `127.0.0.1` in `acore_auth.realmlist.address` table to the local IP-address of the computer on which the server is running. Also change realmlist to the same IP-address in all your game clients. Restart the server after editing the database.
 
 ## Building
 
