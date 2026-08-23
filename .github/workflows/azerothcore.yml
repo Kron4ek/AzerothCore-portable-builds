@@ -1,0 +1,27 @@
+name: AzerothCore CI
+
+on:
+  schedule:
+    - cron:  '0 0 1 * *'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    container: archlinux:latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build AzerothCore
+        run: |
+          sudo pacman -Syu --noconfirm --needed gcc boost cmake git libaio numactl
+          ./build-server.sh
+          export XZ_OPT="-9 -T 0"
+          tar -Jcf azerothcore-wotlk-bin.tar.xz azerothcore-wotlk-bin
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: AzerothCore
+          path: |
+            azerothcore-wotlk-bin.tar.xz
