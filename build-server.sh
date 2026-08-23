@@ -143,6 +143,7 @@ if [[ ! -d mysql ]]; then
     cp -r "${scriptdir}"/mysql .
 fi
 
+cp -r "${scriptdir}"/azerothcore-wotlk/modules/mod-individual-progression/optional .
 cp "${scriptdir}"/start-server.sh .
 
 copy_system_libs
