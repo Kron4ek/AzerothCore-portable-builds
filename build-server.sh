@@ -28,7 +28,12 @@ modules_list=(https://github.com/mod-playerbots/mod-playerbots.git
               https://github.com/Grimfeather/mod-individual-progression.git
               https://github.com/azerothcore/mod-autobalance.git
               https://github.com/azerothcore/mod-ale.git
-              https://github.com/NathanHandley/mod-ah-bot-plus.git)
+              https://github.com/NathanHandley/mod-ah-bot-plus.git
+              https://github.com/azerothcore/mod-account-achievements.git
+              https://github.com/azerothcore/mod-solo-lfg.git
+              https://github.com/azerothcore/mod-random-enchants.git
+              https://github.com/dunjeon/mod-TimeIsTime.git
+              https://github.com/hermensbas/mod_weather_vibe.git)
 
 temp_build_dir="${scriptdir}/azerothcore-build-temp"
 acore_build_result="${scriptdir}/azerothcore-wotlk-bin"
