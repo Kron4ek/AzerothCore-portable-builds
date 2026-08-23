@@ -8,7 +8,7 @@ It also includes a script (`build-server.sh`) for creating such portable builds 
 
 ## How to use
 
-1. Download and extract a ready-to-use build from the [releases](https://github.com/Kron4ek/AzerothCore-portable-builds/releases) page.
+1. Download and extract a ready-to-use build from the [releases](https://github.com/Kron4ek/AzerothCore-portable-builds/releases/latest) page.
 2. Run `start-server.sh` from the server directory and wait a few seconds or a few minutes (depending on how fast your CPU and your storage device is). When the server is fully initialized and is ready-to-use, you will see `World Initialized In [TIME]` near the end of the terminal output among other lines.
 3. Create an account that will be used to log into the server from the game. To do this, type `account create username password` (for example, `account create gamer gamer`) in the same terminal session (window) and press Enter key on your keyboard. You will see `Account created` message in case of success.
 4. Change realmlist in your game client to `127.0.0.1`. To do this, open `Data/enGB/realmlist.wtf` (or your language code instead of enGB) via any text editor, remove everything from it, put the single `set realmlist 127.0.0.1` line and save it.
@@ -36,3 +36,13 @@ Playing solo (running the game and server on the same computer) works out of the
 The `build-server.sh` script has only been tested on Arch Linux and is not guaranteed to work on other Linux distributions. However, the AzerothCore builds it creates should work on most other Linux distributions.
 
 These packages are required (on Arch Linux) for the `build-server.sh` to work properly: `base-devel gcc boost cmake git libaio numactl 7zip wget`
+
+## Sources
+
+- https://github.com/azerothcore/azerothcore-wotlk
+- https://github.com/Grimfeather/azerothcore-wotlk (modified version required for mod-individual-progression)
+- https://github.com/mod-playerbots/mod-playerbots.git
+- https://github.com/Grimfeather/mod-individual-progression.git
+- https://github.com/azerothcore/mod-autobalance.git
+- https://github.com/azerothcore/mod-ale.git
+- https://github.com/NathanHandley/mod-ah-bot-plus.git
