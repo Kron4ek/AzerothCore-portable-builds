@@ -48,7 +48,7 @@ copy_system_libs () {
     cp -L /usr/lib/libncursesw.so.6 "${libs_dir}"/libncurses.so.6
 }
 
-required_programs=(grep sed 7z tar xz)
+required_programs=(gcc grep sed 7z tar xz wget git cmake)
 
 for program in "${required_programs[@]}"; do
     if ! command -v "${program}" 1>/dev/null; then
