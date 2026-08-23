@@ -15,7 +15,8 @@ jobs:
 
       - name: Build AzerothCore
         run: |
-          sudo pacman -Syu --noconfirm --needed base-devel gcc boost cmake git libaio numactl
+          pacman -Syu --noconfirm --needed base-devel gcc boost cmake git libaio numactl 7zip wget
+          export ALLOW_ROOT=1
           ./build-server.sh
           export XZ_OPT="-9 -T 0"
           tar -Jcf azerothcore-wotlk-bin.tar.xz azerothcore-wotlk-bin

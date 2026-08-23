@@ -9,6 +9,11 @@ if [ $EUID = 0 ] && [ -z "$ALLOW_ROOT" ]; then
 	exit 1
 fi
 
+unset mysqld_root_arg
+if [ $EUID = 0 ]; then
+    mysqld_root_arg="--user=root"
+fi
+
 export CFLAGS="-march=x86-64 -O3"
 export CXXFLAGS="${CFLAGS}"
 export COMPILATION_THREADS="$(nproc)"
@@ -168,7 +173,7 @@ echo
 echo "Creating database"
 
 "${scriptdir}"/mysql/bin/mysqld --no-defaults --initialize-insecure --datadir="${acore_build_result}/database" &>/dev/null
-"${scriptdir}"/mysql/bin/mysqld --no-defaults --skip-log-bin --port 3308 --socket /tmp/mysql_acore.sock --mysqlx=OFF --datadir="${acore_build_result}/database" &>mysqld.log &
+"${scriptdir}"/mysql/bin/mysqld --no-defaults ${mysqld_root_arg} --skip-log-bin --port 3308 --socket /tmp/mysql_acore.sock --mysqlx=OFF --datadir="${acore_build_result}/database" &>mysqld.log &
 mysqld_pid=$!
 
 counter=1
