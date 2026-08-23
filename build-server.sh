@@ -209,7 +209,7 @@ while true; do
         break
     fi
 
-    if [[ "${counter}" -ge 1200 ]]; then
+    if [[ "${counter}" -ge 2400 ]]; then
         echo "Failed to run worldserver"
         exit 1
     fi
