@@ -19,10 +19,11 @@ jobs:
           export ALLOW_ROOT=1
           ./build-server.sh
           export XZ_OPT="-9 -T 0"
-          tar -Jcf azerothcore-wotlk-bin.tar.xz azerothcore-wotlk-bin
+          mv azerothcore-wotlk-bin azerothcore-wotlk-linux-x64
+          tar -Jcf azerothcore-wotlk-linux-x64.tar.xz azerothcore-wotlk-linux-x64
 
       - uses: actions/upload-artifact@v4
         with:
-          name: AzerothCore
+          name: azerothcore-wotlk-linux-x64
           path: |
-            azerothcore-wotlk-bin.tar.xz
+            azerothcore-wotlk-linux-x64.tar.xz
