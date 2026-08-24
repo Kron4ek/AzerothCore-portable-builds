@@ -236,6 +236,9 @@ cd "${acore_build_result}"/etc
 sed -i 's|Updates.EnableDatabases = 1|Updates.EnableDatabases = 0|g' authserver.conf
 sed -i 's|Updates.EnableDatabases = 7|Updates.EnableDatabases = 0|g' worldserver.conf
 sed -i 's|Playerbots.Updates.EnableDatabases = 1|Playerbots.Updates.EnableDatabases = 0|g' modules/playerbots.conf
+sed -i 's|WeatherVibe.Enable = 1|WeatherVibe.Enable = 0|g' modules/mod_weather_vibe.conf
+sed -i 's|TimeIsTime.Enable = 1|TimeIsTime.Enable = 0|g' modules/mod-time_is_time.conf
+sed -i 's|SoloLFG.Enable = 1|SoloLFG.Enable = 0|g' modules/SoloLfg.conf
 
 echo
 echo "Done"
