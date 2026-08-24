@@ -30,7 +30,7 @@ https://github.com/user-attachments/assets/ccf2aa02-8af0-4a17-9eb3-e9a6b823e7c0
 1. The game client of version 3.3.5a is required to play on the server. On Linux you can run it via Wine, it works out of the box.
 2. Linux kernel version 4.4 or higher is required, older kernel versions are not supported. Most modern Linux distributions come with a kernel of sufficient version out of the box.
 
-I tested the builds on Arch Linux, Debian 10, Debian 13 and Alpine Linux, and they worked fine on all of them. If you have any issues running the build on your Linux distribution, please let me know.
+I tested the builds on Arch Linux, Debian 10, Debian 13, Ubuntu 24.04 and Alpine Linux, and they worked fine on all of them. If you have any issues running the build on your Linux distribution, please let me know.
 
 ## Server configuration
 
@@ -59,8 +59,13 @@ These packages are required (on Arch Linux) for the `build-server.sh` to work pr
 
 - https://github.com/azerothcore/azerothcore-wotlk
 - https://github.com/Grimfeather/azerothcore-wotlk (modified version required for mod-individual-progression)
-- https://github.com/mod-playerbots/mod-playerbots.git
-- https://github.com/Grimfeather/mod-individual-progression.git
-- https://github.com/azerothcore/mod-autobalance.git
-- https://github.com/azerothcore/mod-ale.git
-- https://github.com/NathanHandley/mod-ah-bot-plus.git
+- https://github.com/mod-playerbots/mod-playerbots
+- https://github.com/Grimfeather/mod-individual-progression
+- https://github.com/azerothcore/mod-autobalance
+- https://github.com/azerothcore/mod-ale
+- https://github.com/NathanHandley/mod-ah-bot-plus
+- https://github.com/azerothcore/mod-account-achievements
+- https://github.com/azerothcore/mod-solo-lfg
+- https://github.com/azerothcore/mod-random-enchants
+- https://github.com/dunjeon/mod-TimeIsTime
+- https://github.com/hermensbas/mod_weather_vibe
