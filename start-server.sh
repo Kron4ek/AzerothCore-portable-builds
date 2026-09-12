@@ -37,6 +37,8 @@ run_ld () {
 
 cd "${acore_install_path}" || exit 1
 
+export OPENSSL_MODULES="${scriptdir}/libs/ossl-modules"
+
 if [[ ! -S /tmp/mysql_acore.sock ]]; then
     if [[ "${mysqld_only}" = "true" ]]; then
         run_ld "${scriptdir}"/mysql/bin/mysqld --no-defaults --skip-log-bin --port 3308 --socket /tmp/mysql_acore.sock --mysqlx=OFF --datadir="${scriptdir}/database"
