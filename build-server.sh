@@ -56,6 +56,7 @@ copy_system_libs () {
 
     cp -L "${acore_build_result}"/mysql/lib/libmysqlclient.so.24 "${libs_dir}"
     cp -L /usr/lib/libncursesw.so.6 "${libs_dir}"/libncurses.so.6
+	cp -r /usr/lib/ossl-modules "${libs_dir}"
 }
 
 required_programs=(gcc grep sed 7z tar xz wget git cmake)
