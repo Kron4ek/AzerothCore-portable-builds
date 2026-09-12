@@ -51,14 +51,18 @@ https://github.com/user-attachments/assets/46b43e70-bbe0-4ded-be73-1915ff493b5b
 
 ## Transfer characters
 
-Do not copy the entire database between different server versions unless you know what you are doing, this will likely break the server (fully or partially).
+Do not copy the entire database between different server builds unless you know what you are doing, this will likely break the server (fully or partially).
 
-To transfer characters between different server builds, use the `pdump` command. 
+To transfer characters, use the `pdump` command. 
 
 1. Run the old server build, execute the `pdump write dumpfilename.sql charactername` command, and stop the server
-2. Move `dumpfilename.sql` to the directory of the new server version
+2. Move `dumpfilename.sql` to the directory of the new server build
 3. Create an account if you have't already done so
-4. Start the new server and execute the `.pdump load dumpfilename.sql accountname` command
+4. Start the new server build and execute the `.pdump load dumpfilename.sql accountname` command
+
+Replace `charactername` and `accountname` with the actual data.
+
+If there are significant differences between the builds, the `pdump load` command may fail. In this case, you might need to manually edit the `dumpfilename.sql` file.
 
 ## Building
 
