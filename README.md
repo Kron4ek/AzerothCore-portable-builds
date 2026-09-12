@@ -49,6 +49,17 @@ https://github.com/user-attachments/assets/46b43e70-bbe0-4ded-be73-1915ff493b5b
 
 </details>
 
+## Transfer characters
+
+Do not copy the entire database between different server versions unless you know what you are doing, this will likely break the server (fully or partially).
+
+To transfer characters between different server builds, use the `pdump` command. 
+
+1. Run the old server build, execute the `pdump write dumpfilename.sql charactername` command, and stop the server
+2. Move `dumpfilename.sql` to the directory of the new server version
+3. Create an account if you have't already done so
+4. Start the new server and execute the `.pdump load dumpfilename.sql accountname` command
+
 ## Building
 
 The `build-server.sh` script has only been tested on Arch Linux and is not guaranteed to work on other Linux distributions. However, the AzerothCore builds it creates should work on most other Linux distributions.
