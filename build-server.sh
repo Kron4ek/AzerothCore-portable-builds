@@ -29,7 +29,6 @@ modules_list=(https://github.com/mod-playerbots/mod-playerbots.git
               https://github.com/azerothcore/mod-autobalance.git
               https://github.com/azerothcore/mod-ale.git
               https://github.com/NathanHandley/mod-ah-bot-plus.git
-              https://github.com/azerothcore/mod-account-achievements.git
               https://github.com/azerothcore/mod-solo-lfg.git
               https://github.com/azerothcore/mod-random-enchants.git
               https://github.com/dunjeon/mod-TimeIsTime.git
