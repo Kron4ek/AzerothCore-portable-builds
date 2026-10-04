@@ -130,6 +130,11 @@ make -j${COMPILATION_THREADS} install
 
 rm -rf "${temp_build_dir}"
 
+if [[ ! -f "${acore_install_path}"/bin/worldserver ]]; then
+    echo "Failed to compile azerothcore"
+    exit 1
+fi
+
 cd "${acore_build_result}" || exit 1
 
 echo
@@ -204,7 +209,7 @@ done
 echo
 echo "Filling and updating the database"
 
-/tmp/acore/bin/worldserver &
+"${acore_install_path}"/bin/worldserver &
 worldserver_pid=$!
 
 counter=1
