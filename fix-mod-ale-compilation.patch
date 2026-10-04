@@ -1,0 +1,24 @@
+diff -ruN azerothcore-wotlk/modules/mod-ale/src/LuaEngine/methods/PlayerMethods.h azerothcore-wotlk-patched/modules/mod-ale/src/LuaEngine/methods/PlayerMethods.h
+--- azerothcore-wotlk/modules/mod-ale/src/LuaEngine/methods/PlayerMethods.h	2026-10-04 13:38:08.454927599 +0000
++++ azerothcore-wotlk-patched/modules/mod-ale/src/LuaEngine/methods/PlayerMethods.h	2026-10-04 13:39:08.946088130 +0000
+@@ -11,6 +11,11 @@
+ #include "GameTime.h"
+ #include "GossipDef.h"
+ 
++#ifdef MOD_PLAYERBOTS
++#include "PlayerbotAI.h"
++#include "PlayerbotMgr.h"
++#endif
++
+ /***
+  * Inherits all methods from: [Object], [WorldObject], [Unit]
+  */
+@@ -5164,7 +5169,7 @@
+     int IsBot(lua_State* L, Player* player)
+     {
+     #if defined(MOD_PLAYERBOTS)
+-        ALE::Push(L, player->GetSession()->IsBot());
++        ALE::Push(L, player && sPlayerbotsMgr.GetPlayerbotAI(player) != nullptr);
+     #else
+         (void)player;
+         ALE::Push(L, false);

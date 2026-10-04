@@ -76,6 +76,9 @@ if [ ! -d azerothcore-wotlk ]; then
                 git clone "${module}"
             done
 
+            cd "${scriptdir}"/azerothcore-wotlk
+            patch -Np1 < "${scriptdir}"/fix-mod-ale-compilation.patch
+
             cd "${scriptdir}"
         fi
     else
