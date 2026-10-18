@@ -241,6 +241,7 @@ cd "${acore_build_result}"/etc
 sed -i 's|Updates.EnableDatabases = 1|Updates.EnableDatabases = 0|g' authserver.conf
 sed -i 's|Updates.EnableDatabases = 7|Updates.EnableDatabases = 0|g' worldserver.conf
 sed -i 's|DBC.EnforceItemAttributes = 1|DBC.EnforceItemAttributes = 0|g' worldserver.conf
+sed -i 's|MapUpdate.Threads = 1|MapUpdate.Threads = 2|g' worldserver.conf
 sed -i 's|Playerbots.Updates.EnableDatabases = 1|Playerbots.Updates.EnableDatabases = 0|g' modules/playerbots.conf
 sed -i 's|Playerbots.RandomBotAutologin = 0|Playerbots.RandomBotAutologin = 1|g' modules/playerbots.conf
 sed -i 's|Playerbots.MinRandomBots = 500|Playerbots.MinRandomBots = 100|g' modules/playerbots.conf
