@@ -168,7 +168,7 @@ cd "${acore_build_result}"/etc
 sed -i 's|3306|3308|g' authserver.conf
 sed -i 's|3306|3308|g' worldserver.conf
 sed -i 's|3306|3308|g' modules/playerbots.conf
-sed -i 's|AiPlayerbot.RandomBotAutologin = 1|AiPlayerbot.RandomBotAutologin = 0|g' modules/playerbots.conf
+sed -i 's|Playerbots.RandomBotAutologin = 1|Playerbots.RandomBotAutologin = 0|g' modules/playerbots.conf
 sed -i "s|DataDir = \".\"|DataDir = \"${acore_install_path}/data\"|g" worldserver.conf
 sed -i "s|MySQLExecutable = \"\"|MySQLExecutable = \"${acore_install_path}/mysql/bin/mysql\"|g" worldserver.conf
 sed -i "s|SourceDirectory = \"\"|SourceDirectory = \"${scriptdir}/azerothcore-wotlk\"|g" worldserver.conf
@@ -242,9 +242,9 @@ sed -i 's|Updates.EnableDatabases = 1|Updates.EnableDatabases = 0|g' authserver.
 sed -i 's|Updates.EnableDatabases = 7|Updates.EnableDatabases = 0|g' worldserver.conf
 sed -i 's|DBC.EnforceItemAttributes = 1|DBC.EnforceItemAttributes = 0|g' worldserver.conf
 sed -i 's|Playerbots.Updates.EnableDatabases = 1|Playerbots.Updates.EnableDatabases = 0|g' modules/playerbots.conf
-sed -i 's|AiPlayerbot.RandomBotAutologin = 0|AiPlayerbot.RandomBotAutologin = 1|g' modules/playerbots.conf
-sed -i 's|AiPlayerbot.MinRandomBots = 500|AiPlayerbot.MinRandomBots = 100|g' modules/playerbots.conf
-sed -i 's|AiPlayerbot.MaxRandomBots = 500|AiPlayerbot.MaxRandomBots = 100|g' modules/playerbots.conf
+sed -i 's|Playerbots.RandomBotAutologin = 0|Playerbots.RandomBotAutologin = 1|g' modules/playerbots.conf
+sed -i 's|Playerbots.MinRandomBots = 500|Playerbots.MinRandomBots = 100|g' modules/playerbots.conf
+sed -i 's|Playerbots.MaxRandomBots = 500|Playerbots.MaxRandomBots = 100|g' modules/playerbots.conf
 sed -i 's|WeatherVibe.Enable = 1|WeatherVibe.Enable = 0|g' modules/mod_weather_vibe.conf
 sed -i 's|TimeIsTime.Enable = 1|TimeIsTime.Enable = 0|g' modules/mod-time_is_time.conf
 sed -i 's|SoloLFG.Enable = 1|SoloLFG.Enable = 0|g' modules/SoloLfg.conf
