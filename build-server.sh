@@ -14,7 +14,7 @@ if [ $EUID = 0 ]; then
     mysqld_root_arg="--user=root"
 fi
 
-export CFLAGS="-march=x86-64-v2 -O3"
+export CFLAGS="-march=x86-64 -O3 -flto"
 export CXXFLAGS="${CFLAGS}"
 export COMPILATION_THREADS="$(nproc)"
 
