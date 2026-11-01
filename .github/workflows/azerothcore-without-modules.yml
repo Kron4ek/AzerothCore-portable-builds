@@ -1,0 +1,30 @@
+name: AzerothCore (without modules) CI
+
+on:
+  schedule:
+    - cron:  '0 0 1 * *'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    container: archlinux:latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build AzerothCore
+        run: |
+          pacman -Syu --noconfirm --needed base-devel gcc boost cmake git libaio numactl 7zip wget
+          export ALLOW_ROOT=1
+          export BUILD_WITHOUT_MODULES=true
+          ./build-server.sh
+          export XZ_OPT="-9 -T 0"
+          mv azerothcore-wotlk-bin azerothcore-wotlk-without-modules-linux-x64
+          tar -Jcf azerothcore-wotlk-without-modules-linux-x64.tar.xz azerothcore-wotlk-without-modules-linux-x64
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: azerothcore-wotlk-without-modules-linux-x64
+          path: |
+            azerothcore-wotlk-without-modules-linux-x64.tar.xz

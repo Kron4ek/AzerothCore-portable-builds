@@ -18,11 +18,14 @@ export CFLAGS="-march=x86-64 -O3 -flto"
 export CXXFLAGS="${CFLAGS}"
 export COMPILATION_THREADS="$(nproc)"
 
+export BUILD_WITHOUT_MODULES=${BUILD_WITHOUT_MODULES:-"false"}
+
 export scriptdir="$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")"
 
 mysql_server="https://dev.mysql.com/get/Downloads/MySQL-9.7/mysql-9.7.2-linux-glibc2.28-x86_64-minimal.tar.xz"
 game_data="https://github.com/Kron4ek/AzerothCore-portable-builds/releases/download/data/data.7z"
 azerothcore_repo="https://github.com/Grimfeather/azerothcore-wotlk.git"
+azerothcore_repo_orig="https://github.com/azerothcore/azerothcore-wotlk.git"
 
 modules_list=(https://github.com/mod-playerbots/mod-playerbots.git
               https://github.com/Grimfeather/mod-individual-progression.git
@@ -34,6 +37,15 @@ modules_list=(https://github.com/mod-playerbots/mod-playerbots.git
               https://github.com/dunjeon/mod-TimeIsTime.git
               https://github.com/hermensbas/mod_weather_vibe.git
               https://github.com/Stefan2102/mod-transmog-plus.git)
+
+if [ "${BUILD_WITHOUT_MODULES}" = "true" ]; then
+    echo "Building a clean version without modules"
+
+    azerothcore_repo="${azerothcore_repo_orig}"
+    modules_list=()
+
+    sleep 5
+fi
 
 temp_build_dir="${scriptdir}/azerothcore-build-temp"
 acore_build_result="${scriptdir}/azerothcore-wotlk-bin"
@@ -241,15 +253,18 @@ cd "${acore_build_result}"/etc
 
 sed -i 's|Updates.EnableDatabases = 1|Updates.EnableDatabases = 0|g' authserver.conf
 sed -i 's|Updates.EnableDatabases = 7|Updates.EnableDatabases = 0|g' worldserver.conf
-sed -i 's|DBC.EnforceItemAttributes = 1|DBC.EnforceItemAttributes = 0|g' worldserver.conf
 sed -i 's|MapUpdate.Threads = 1|MapUpdate.Threads = 2|g' worldserver.conf
-sed -i 's|Playerbots.Updates.EnableDatabases = 1|Playerbots.Updates.EnableDatabases = 0|g' modules/playerbots.conf
-sed -i 's|Playerbots.RandomBotAutologin = 0|Playerbots.RandomBotAutologin = 1|g' modules/playerbots.conf
-sed -i 's|Playerbots.MinRandomBots = 500|Playerbots.MinRandomBots = 100|g' modules/playerbots.conf
-sed -i 's|Playerbots.MaxRandomBots = 500|Playerbots.MaxRandomBots = 100|g' modules/playerbots.conf
-sed -i 's|WeatherVibe.Enable = 1|WeatherVibe.Enable = 0|g' modules/mod_weather_vibe.conf
-sed -i 's|TimeIsTime.Enable = 1|TimeIsTime.Enable = 0|g' modules/mod-time_is_time.conf
-sed -i 's|SoloLFG.Enable = 1|SoloLFG.Enable = 0|g' modules/SoloLfg.conf
+
+if [ "${BUILD_WITHOUT_MODULES}" != "true" ]; then
+    sed -i 's|DBC.EnforceItemAttributes = 1|DBC.EnforceItemAttributes = 0|g' worldserver.conf
+    sed -i 's|Playerbots.Updates.EnableDatabases = 1|Playerbots.Updates.EnableDatabases = 0|g' modules/playerbots.conf
+    sed -i 's|Playerbots.RandomBotAutologin = 0|Playerbots.RandomBotAutologin = 1|g' modules/playerbots.conf
+    sed -i 's|Playerbots.MinRandomBots = 500|Playerbots.MinRandomBots = 100|g' modules/playerbots.conf
+    sed -i 's|Playerbots.MaxRandomBots = 500|Playerbots.MaxRandomBots = 100|g' modules/playerbots.conf
+    sed -i 's|WeatherVibe.Enable = 1|WeatherVibe.Enable = 0|g' modules/mod_weather_vibe.conf
+    sed -i 's|TimeIsTime.Enable = 1|TimeIsTime.Enable = 0|g' modules/mod-time_is_time.conf
+    sed -i 's|SoloLFG.Enable = 1|SoloLFG.Enable = 0|g' modules/SoloLfg.conf
+fi
 
 echo
 echo "Done"
