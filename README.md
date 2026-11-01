@@ -2,7 +2,7 @@
 
 Always wanted to play on your own local World of Warcraft 3.3.5a server, but were intimidated by the compilation and installation process? You can now do this easily.
 
-This repository contains fully portable and ready-to-use AzerothCore builds for Linux that should work on most Linux distributions. By default the builds include `mod-playerbots`, `mod-individual-progression` and a few other modules.
+This repository contains fully portable and ready-to-use AzerothCore builds for Linux that should work on most Linux distributions. By default the builds include `mod-playerbots`, `mod-individual-progression` and a few other modules. Clean builds without modules are also available.
 
 It also includes a script (`build-server.sh`) for creating such portable builds for those who want to customize things or simply have full control over the build environment.
 
@@ -84,3 +84,5 @@ These packages are required (on Arch Linux) for the `build-server.sh` to work pr
 - https://github.com/azerothcore/mod-random-enchants
 - https://github.com/dunjeon/mod-TimeIsTime
 - https://github.com/hermensbas/mod_weather_vibe
+- https://github.com/Stefan2102/mod-transmog-plus.git
+- https://github.com/Wishmaster117/mod-multibot-bridge.git
