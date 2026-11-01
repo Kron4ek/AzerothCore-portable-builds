@@ -32,7 +32,8 @@ modules_list=(https://github.com/mod-playerbots/mod-playerbots.git
               https://github.com/azerothcore/mod-solo-lfg.git
               https://github.com/azerothcore/mod-random-enchants.git
               https://github.com/dunjeon/mod-TimeIsTime.git
-              https://github.com/hermensbas/mod_weather_vibe.git)
+              https://github.com/hermensbas/mod_weather_vibe.git
+              https://github.com/Stefan2102/mod-transmog-plus.git)
 
 temp_build_dir="${scriptdir}/azerothcore-build-temp"
 acore_build_result="${scriptdir}/azerothcore-wotlk-bin"
