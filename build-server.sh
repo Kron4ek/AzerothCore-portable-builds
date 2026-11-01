@@ -36,7 +36,8 @@ modules_list=(https://github.com/mod-playerbots/mod-playerbots.git
               https://github.com/azerothcore/mod-random-enchants.git
               https://github.com/dunjeon/mod-TimeIsTime.git
               https://github.com/hermensbas/mod_weather_vibe.git
-              https://github.com/Stefan2102/mod-transmog-plus.git)
+              https://github.com/Stefan2102/mod-transmog-plus.git
+              https://github.com/Wishmaster117/mod-multibot-bridge.git)
 
 if [ "${BUILD_WITHOUT_MODULES}" = "true" ]; then
     echo "Building a clean version without modules"
