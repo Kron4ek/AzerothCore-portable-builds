@@ -254,6 +254,7 @@ cd "${acore_build_result}"/etc
 sed -i 's|Updates.EnableDatabases = 1|Updates.EnableDatabases = 0|g' authserver.conf
 sed -i 's|Updates.EnableDatabases = 7|Updates.EnableDatabases = 0|g' worldserver.conf
 sed -i 's|MapUpdate.Threads = 1|MapUpdate.Threads = 2|g' worldserver.conf
+sed -i 's|Warden.Enabled = 1|Warden.Enabled = 0|g' worldserver.conf
 
 if [ "${BUILD_WITHOUT_MODULES}" != "true" ]; then
     sed -i 's|DBC.EnforceItemAttributes = 1|DBC.EnforceItemAttributes = 0|g' worldserver.conf
