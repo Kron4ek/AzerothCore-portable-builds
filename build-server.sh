@@ -255,6 +255,8 @@ sed -i 's|Updates.EnableDatabases = 1|Updates.EnableDatabases = 0|g' authserver.
 sed -i 's|Updates.EnableDatabases = 7|Updates.EnableDatabases = 0|g' worldserver.conf
 sed -i 's|MapUpdate.Threads = 1|MapUpdate.Threads = 2|g' worldserver.conf
 sed -i 's|Warden.Enabled = 1|Warden.Enabled = 0|g' worldserver.conf
+sed -i 's|Visibility.Distance.Continents = 100|Visibility.Distance.Continents = 250|g' worldserver.conf
+sed -i 's|Visibility.Distance.Instances = 170|Visibility.Distance.Instances = 250|g' worldserver.conf
 
 if [ "${BUILD_WITHOUT_MODULES}" != "true" ]; then
     sed -i 's|DBC.EnforceItemAttributes = 1|DBC.EnforceItemAttributes = 0|g' worldserver.conf
