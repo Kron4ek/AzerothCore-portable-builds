@@ -84,5 +84,4 @@ These packages are required (on Arch Linux) for the `build-server.sh` to work pr
 - https://github.com/azerothcore/mod-random-enchants
 - https://github.com/dunjeon/mod-TimeIsTime
 - https://github.com/hermensbas/mod_weather_vibe
-- https://github.com/Stefan2102/mod-transmog-plus.git
 - https://github.com/Wishmaster117/mod-multibot-bridge.git
